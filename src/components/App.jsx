@@ -1,16 +1,19 @@
+import React from "react";
+import { PhoneBook } from "./phonebook";
+
 export const App = () => {
   return (
     <div
-      style={{
-        height: '100vh',
+       style={{
+         height: '100vh',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
-      }}
+         color: '#010101'
+    }}
     >
-      React homework template
+      <PhoneBook/>
     </div>
   );
 };
