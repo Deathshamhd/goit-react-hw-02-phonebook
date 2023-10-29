@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { nanoid } from 'nanoid';
 
 import{
     MainContainer,
@@ -61,7 +60,7 @@ export class PhoneBook extends Component {
             
         } 
     };
-   
+    // Event handler for changes in the filter input field
     handleFilterChange = e => {
         this.setState({
             filter: e.target.value
@@ -76,10 +75,10 @@ export class PhoneBook extends Component {
     }
 
     render() {
-    
+        // Extract the values from the state for ease of use
         const { number, name, contacts, filter } = this.state;
 
-       
+         // Filter the contacts based on the 'filter' state
          const filteredContacts = contacts.filter(contact => contact.name.includes(filter))
 
         const ContactForm = () => {
@@ -96,8 +95,8 @@ export class PhoneBook extends Component {
                     pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                     title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan."
                     required
-                    value={name} 
-                    onChange={this.handleChange} 
+                    value={name} // Bind the input value to the 'name' state
+                    onChange={this.handleChange} // Call handleChange function when the input value changes
                 />
                 <ContactDetails>Phone Number</ContactDetails>
                 <input
@@ -132,10 +131,10 @@ export class PhoneBook extends Component {
                 />
 
                 {filteredContacts.length === 0 ? (
-                    
+                    // Display "No contacts" if there are no contacts in the 'contacts' array
                     <h2>No contacts</h2>
                 ) : (
-                
+                    // Display the list of contacts using the 'ul' and 'li' elements
                     <ul>
                         {filteredContacts.map(({name, number, id})=>(
                             <li key={id}> {name}: {number} 
