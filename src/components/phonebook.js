@@ -49,7 +49,7 @@ export class PhoneBook extends Component {
                     name: name,
                     number: number,
                 }
-                // Add the new contact to the contacts array and reset the name field
+                // Add the new contacts array and reset the name field
 
                 this.setState(() => ({
                     contacts: [...contacts, newContact],
@@ -95,8 +95,8 @@ export class PhoneBook extends Component {
                     pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                     title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan."
                     required
-                    value={name} // Bind the input value to the 'name' state
-                    onChange={this.handleChange} // Call handleChange function when the input value changes
+                    value={name} 
+                    onChange={this.handleChange}
                 />
                 <ContactDetails>Phone Number</ContactDetails>
                 <input
